@@ -134,3 +134,33 @@ doc/*.txt
 # ignore all .pdf files in the doc/ directory and any of its subdirectories
 doc/**/*.pdf
 ```
+
+### ignore local change to files
+
+- .gitignore
+ - 说明：显式地阻止提交文件。
+ - 优势：.gitignore 文件本身提交至远程仓库，全组共享忽略文件配置。
+ - 局限：如果项目已经存在远程仓库，即使被加入 .gitignore，仍然可以进行修改并提交。本地的修改会显示在 git status 结果中。
+- .git/info/exclude
+ - 说明：显式地阻止提交文件。
+ - 优势：exclude 文件本身不会提交至远程仓库，因此适合放一些个人定制的 「gitignore」 项目。
+ - 局限：和 .gitignore 存在同样地局限。文件若已存在远程仓库，则本地修改仍可以提交至远程仓库。本地的修改会显示在 git status 结果中。
+- assume-unchanged
+ - 说明：声明本地远程都不会修改这个文件。
+ - 优势：git 直接跳过这些文件的处理以提升性能。文件不会出现在 git status。
+ - 局限：不适合本地或远程需要修改的文件。本地会忽略掉之后远程文件的修改。
+- skip-worktree
+ - 说明：声明忽略文件的本地修改。
+ - 优势：本地可以对文件做一些个人定制。文件不会出现在 git status。
+ - 局限：拉取远程文件更新，或切换分支时有可能出现冲突，需要撤销忽略后手动解决冲突。
+
+```
+git update-index --assume-unchanged /path/to/file
+git update-index --skip-worktree /path/to/file
+git update-index --no-skip-worktree /path/to/file
+```
+
+find hide files
+```
+git ls-files -v | grep -E 'h '
+```
