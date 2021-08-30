@@ -47,3 +47,43 @@ for a quicker refresher
 ```
 git <verb> -h
 ```
+
+# Chapter 2
+
+## Recording changes to the repository
+
+each file in your working directory can be in one of two states: tracked or untracked.
+
+- tracked files are files that were in the last snapshot, as well as any newly staged files;
+  they can be unmodified, modified, or staged. In short, tracked files are files that Git knows about.
+- untracked files are everything else.
+- so you cannot make files that belong to last snapshot untracked.(build.gradle cannot be untracked)
+
+### the lifecycle of the status of your files
+- untracked --add--> staged
+- unmodified --(edit it)--> modified --add--> staged
+- staged --commit--> unmodified --(remove the file)--> untracked
+
+you can check the status of your files:
+```
+git status
+```
+you can track new file by:
+```
+git add <file_name>
+```
+you can stage modified file by:
+```
+git add <file_name>
+```
+
+`git add` is a multipurpose command:
+- you use it to begin tracking new files
+- to stage files
+- to do other things like marking merge-conflicted files as resolved
+
+### short status
+
+```
+git status -s
+```
