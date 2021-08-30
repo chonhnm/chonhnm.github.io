@@ -85,5 +85,20 @@ git add <file_name>
 ### short status
 
 ```
-git status -s
+$ git status -s
+ M README
+MM Rakefile
+A  lib/git.rb
+M  lib/simplegit.rb
+?? LICENSE.txt
 ```
+There are two columns to the output
+- the left-hand column indicates the status of the staging area(changes to be committed)
+- the right-hand column indicates the status of the working tree(changes not staged for commit)
+
+### Ignoring Files
+
+```
+$ cat .gitignore
+*.[oa]
+*~
