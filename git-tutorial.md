@@ -102,3 +102,35 @@ There are two columns to the output
 $ cat .gitignore
 *.[oa]
 *~
+```
+
+the rules for patterns in the `.gitignore` file:
+- Blank lines or lines starting with # are ignored.
+
+- Standard glob patterns work, and will be applied recursively throughout the entire working tree.
+
+- You can start patterns with a forward slash (/) to avoid recursivity.
+
+- You can end patterns with a forward slash (/) to specify a directory.
+
+- You can negate a pattern by starting it with an exclamation point (!).
+
+```
+# ignore all .a files
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+```
