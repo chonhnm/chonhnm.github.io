@@ -1,30 +1,31 @@
-import utilStyles from "../../styles/utils.module.css";
-import Layout, { siteTitle } from "../../components/layout";
+import Layout from "../../components/layout";
 import Date from "../../components/date";
-import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
+import utilStyles from "../../styles/utils.module.css";
+import { getAllNoteIds, getNoteData } from "../../lib/notes";
+import { siteTitle } from "../../components/layout";
 
-export default function Post({ postData }) {
+export default function Note({ noteData }) {
   return (
     <Layout>
       <Head>
         <title>
-          {postData.title} · {siteTitle}
+          {noteData.title} · {siteTitle}
         </title>
       </Head>
 
       <article className={utilStyles.article}>
         <header className={utilStyles.articleHeader}>
-          <h1 className={utilStyles.articleTitle}>{postData.title}</h1>
-          {postData.date && (
+          <h1 className={utilStyles.articleTitle}>{noteData.title}</h1>
+          {noteData.date && (
             <div className={utilStyles.articleMeta}>
-              <Date dateString={postData.date} />
+              <Date dateString={noteData.date} />
             </div>
           )}
         </header>
         <div
           className={utilStyles.articleBody}
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          dangerouslySetInnerHTML={{ __html: noteData.contentHtml }}
         />
       </article>
     </Layout>
@@ -32,7 +33,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = getAllNoteIds();
   return {
     paths,
     fallback: false,
@@ -40,10 +41,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const noteData = await getNoteData(params.id);
   return {
     props: {
-      postData,
+      noteData,
     },
   };
 }
