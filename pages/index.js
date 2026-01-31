@@ -13,24 +13,32 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section className={utilStyles.headingMd}>
-        <p className={utilStyles.small}>{site.subtitle}</p>
-        <hr />
-      </section>
+      <h1 className={utilStyles.heading2Xl}>{site.title}</h1>
 
-      <section className={utilStyles.headingMd}>
-        <h2 className={utilStyles.headingLg}>Writing</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <div className={`${utilStyles.lightText} ${utilStyles.small}`}>
-                <Date dateString={date} />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <ul className={utilStyles.linkList}>
+        {site.external?.map((l) => (
+          <li key={l.href}>
+            <a href={l.href} target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p>{site.subtitle}</p>
+
+      <h2 className={utilStyles.headingXl}>Oh, Hello There!</h2>
+
+      <ul className={utilStyles.postList}>
+        {allPostsData.map(({ id, date, title }) => (
+          <li className={utilStyles.postItem} key={id}>
+            <span className={utilStyles.postDate}>
+              <Date dateString={date} /> —
+            </span>{" "}
+            <Link href={`/posts/${id}`}>{title}</Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 }

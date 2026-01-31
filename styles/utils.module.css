@@ -1,17 +1,17 @@
 .heading2Xl {
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02rem;
-  margin: 0.25rem 0;
+  margin: 1.2rem 0 0.5rem;
 }
 
 .headingXl {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.25;
   font-weight: 700;
   letter-spacing: -0.02rem;
-  margin: 1.25rem 0 0.5rem;
+  margin: 1.5rem 0 0.6rem;
 }
 
 .headingLg {
@@ -40,15 +40,30 @@
   color: var(--muted);
 }
 
-.inlineList {
-  list-style: none;
-  padding: 0;
-  margin: 0.25rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
 .small {
   font-size: 0.95rem;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 1.25rem;
+}
+
+.linkList li {
+  margin: 0.25rem 0;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postItem {
+  margin: 0 0 0.75rem;
+}
+
+.postDate {
+  color: var(--muted);
 }

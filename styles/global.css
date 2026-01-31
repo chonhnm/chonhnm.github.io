@@ -8,7 +8,7 @@
   --link-visited: #6b2fbf;
   --rule: #e8e8e8;
   --code-bg: #f6f6f6;
-  --container: 44rem;
+  --container: 46rem;
 }
 
 html,
@@ -29,17 +29,15 @@ body {
 
 a {
   color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
 }
 
 a:visited {
   color: var(--link-visited);
-}
-
-a:hover {
-  text-decoration-thickness: 2px;
 }
 
 p,

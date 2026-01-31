@@ -17,15 +17,14 @@ export default function Layout({ children }) {
       </Head>
 
       <header className={styles.header}>
-        <div className={styles.siteTitle}>
-          <Link href="/">{site.title}</Link>
-        </div>
-        <nav className={styles.nav}>
-          {site.links?.map((l) => (
-            <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-              {l.label}
-            </a>
-          ))}
+        <nav aria-label="Primary" className={styles.nav}>
+          <ul className={styles.navList}>
+            {site.nav?.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href}>{l.label}</Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       </header>
 

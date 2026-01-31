@@ -5,9 +5,24 @@ export const site = {
   title: "My Bad Opinions",
   subtitle: "Essays and notes on programming.",
   author: "Chon",
-  links: [
-    { label: "GitHub", href: "https://github.com/chonhnm" },
-    // { label: "RSS", href: "/rss.xml" },
-    // { label: "Email", href: "mailto:you@example.com" },
+  nav: [
+    { label: "blog", href: "/" },
+    { label: "notes", href: "/notes" },
+    { label: "about", href: "/about" },
   ],
+  external: [
+    { label: "GitHub", href: "https://github.com/chonhnm" },
+  ],
+  about: {
+    title: "About",
+    paragraphs: [
+      "(Write something about yourself here.)",
+    ],
+  },
+  notes: {
+    title: "Notes",
+    paragraphs: [
+      "Shorter, less-polished writing. (Optional.)",
+    ],
+  },
 };
