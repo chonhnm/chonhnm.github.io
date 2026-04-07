@@ -3,6 +3,8 @@ import Layout, { siteTitle } from "../../components/layout";
 import Date from "../../components/date";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
+import Link from "next/link";
+import { slugifyTag } from "../../lib/post-utils";
 
 export default function Post({ postData }) {
   return (
@@ -16,11 +18,24 @@ export default function Post({ postData }) {
       <article className={utilStyles.article}>
         <header className={utilStyles.articleHeader}>
           <h1 className={utilStyles.articleTitle}>{postData.title}</h1>
-          {postData.date && (
-            <div className={utilStyles.articleMeta}>
-              <Date dateString={postData.date} />
-            </div>
+          {postData.summary && (
+            <p className={utilStyles.articleSummary}>{postData.summary}</p>
           )}
+          <div className={utilStyles.articleMeta}>
+            {postData.date && <Date dateString={postData.date} />}
+            {postData.readingTime ? <span>{postData.readingTime} min read</span> : null}
+          </div>
+          {postData.tags?.length ? (
+            <ul className={utilStyles.tagList}>
+              {postData.tags.map((tag) => (
+                <li key={tag}>
+                  <Link href={`/tags/${slugifyTag(tag)}`} className={utilStyles.tag}>
+                    #{tag}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </header>
         <div
           className={utilStyles.articleBody}

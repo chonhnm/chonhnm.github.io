@@ -10,10 +10,16 @@ export default function About() {
         <title>{site.about.title} · {siteTitle}</title>
       </Head>
 
-      <h2 className={utilStyles.headingXl}>{site.about.title}</h2>
-      {site.about.paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
-      ))}
+      <section className={utilStyles.stack}>
+        <span className={utilStyles.eyebrow}>About this site</span>
+        <h1 className={utilStyles.headingXl}>{site.about.title}</h1>
+        <p className={utilStyles.pageLead}>
+          一个使用 Next.js 与 Markdown 构建的个人博客，目标是保持写作体验简单、阅读体验舒适。
+        </p>
+        {site.about.paragraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </section>
     </Layout>
   );
 }

@@ -1,6 +1,11 @@
 ---
 title: 'Two Forms of Pre-rendering'
 date: '2020-01-01'
+summary: '比较 Static Generation 与 Server-side Rendering 的使用场景，以及为什么静态生成通常更适合内容站点。'
+tags:
+  - Next.js
+  - Rendering
+  - Performance
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
