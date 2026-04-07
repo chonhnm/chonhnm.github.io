@@ -1,6 +1,11 @@
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
+summary: '梳理静态生成与服务端渲染的选择边界，帮助博客或内容站点做出更合适的技术决策。'
+tags:
+  - Next.js
+  - SSG
+  - Architecture
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

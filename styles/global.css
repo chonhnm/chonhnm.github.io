@@ -1,14 +1,15 @@
-/* global.css — minimalist, typography-first (inspired by ferd.ca vibe) */
-
 :root {
-  --bg: #fff;
-  --text: #111;
-  --muted: #666;
-  --link: #1b5dbf;
-  --link-visited: #6b2fbf;
-  --rule: #e8e8e8;
-  --code-bg: #f6f6f6;
-  --container: 46rem;
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --surface-muted: #f3f4f6;
+  --text: #1f2328;
+  --muted: #59636e;
+  --link: #0969da;
+  --link-visited: #8250df;
+  --rule: #d0d7de;
+  --code-bg: #f6f8fa;
+  --container: 72rem;
+  --shadow: 0 1px 2px rgba(31, 35, 40, 0.08);
 }
 
 html,
@@ -17,9 +18,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
   line-height: 1.65;
-  font-size: 18px;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
 }
 
@@ -43,7 +45,7 @@ a:visited {
 p,
 ul,
 ol {
-  margin: 0.9rem 0;
+  margin: 0.85rem 0;
 }
 
 hr {
@@ -63,13 +65,14 @@ pre {
   background: var(--code-bg);
   padding: 0.9rem 1rem;
   overflow-x: auto;
-  border-radius: 6px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
 }
 
 code {
   background: var(--code-bg);
   padding: 0.12rem 0.28rem;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 pre code {
@@ -88,4 +91,9 @@ blockquote {
   padding: 0.25rem 0 0.25rem 1rem;
   border-left: 3px solid var(--rule);
   color: var(--muted);
+}
+
+input,
+textarea {
+  font: inherit;
 }

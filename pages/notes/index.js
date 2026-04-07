@@ -12,7 +12,15 @@ export default function Notes({ allNotesData }) {
         <title>notes · {siteTitle}</title>
       </Head>
 
-      <h1 className={utilStyles.heading2Xl}>Notes</h1>
+      <section className={utilStyles.stack}>
+        <span className={utilStyles.eyebrow}>Short-form writing</span>
+        <h1 className={utilStyles.headingXl}>Notes</h1>
+        <p className={utilStyles.pageLead}>
+          {allNotesData.length
+            ? "收集更短的技术记录、临时想法与实验摘要。"
+            : "这里会放一些更短的技术记录与草稿。"}
+        </p>
+      </section>
 
       <ul className={utilStyles.postList}>
         {allNotesData.map(({ id, date, title }) => (

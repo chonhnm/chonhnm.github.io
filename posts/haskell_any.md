@@ -1,6 +1,11 @@
 ---
 title: 'Haskell Any vs C++ Varaint'
 date: '2023-10-25'
+summary: '从常量池建模出发，讨论 Haskell 中 sum type、Dynamic 与 existential types 的取舍。'
+tags:
+  - Haskell
+  - JVM
+  - Type System
 ---
 
 Java的Class文件中，有一个重要的符号引用列表，即常量池列表。常量池列表中包含各种常量项，在JVM21规范中共有17种常量项。比如：CONSTANT_Class、CONSTANT_Integer、CONSTANT_Utf8等。那么如何使用Haskell表示常量项？
