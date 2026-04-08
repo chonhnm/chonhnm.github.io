@@ -274,29 +274,107 @@
 
 .articleBody {
   margin-top: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .articleBody h2 {
-  font-size: 1.6rem;
-  margin: 1.75rem 0 0.75rem;
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
 }
 
 .articleBody h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  margin: 2rem 0 0.8rem;
+}
+
+.articleBody h4 {
+  font-size: 1.15rem;
   margin: 1.5rem 0 0.6rem;
+}
+
+.articleBody p {
+  margin: 1rem 0;
 }
 
 .articleBody ul,
 .articleBody ol {
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
 }
 
 .articleBody li {
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
 }
 
 .articleBody pre {
+  background: #0d1117;
+  padding: 1.2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.articleBody code {
+  font-size: 0.9em;
   background: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.articleBody pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #e6edf3;
+}
+
+.articleBody blockquote {
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-left: 4px solid var(--link);
+  background: var(--surface-muted);
+  border-radius: 4px;
+}
+
+.articleBody img {
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.articleBody a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(9, 105, 218, 0.3);
+  text-underline-offset: 2px;
+}
+
+.articleBody a:hover {
+  text-decoration-color: var(--link);
+}
+
+.articleBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.articleBody table th,
+.articleBody table td {
+  padding: 0.75rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+}
+
+.articleBody table th {
+  background: var(--surface-muted);
+  font-weight: 600;
 }
 
 .emptyState {

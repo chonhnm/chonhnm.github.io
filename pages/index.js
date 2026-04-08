@@ -15,50 +15,14 @@ export default function Home({ allPostsData, tags }) {
       </Head>
 
       <section className={utilStyles.hero}>
-        <span className={utilStyles.eyebrow}>Markdown-first publishing</span>
         <h1 className={utilStyles.heading2Xl}>{site.title}</h1>
         <p className={utilStyles.heroLead}>{site.subtitle}</p>
-
-        <div className={utilStyles.introList}>
-          {site.intro?.map((line) => (
-            <p className={utilStyles.introItem} key={line}>
-              {line}
-            </p>
-          ))}
-        </div>
-
-        <div className={utilStyles.heroActions}>
-          <Link href="/upload" className={utilStyles.buttonPrimary}>
-            Upload Markdown
-          </Link>
-          <Link href="/tags" className={utilStyles.buttonSecondary}>
-            Browse Tags
-          </Link>
-        </div>
-      </section>
-
-      <section className={utilStyles.statsGrid}>
-        <div className={utilStyles.statCard}>
-          <p className={utilStyles.statLabel}>Published posts</p>
-          <p className={utilStyles.statValue}>{allPostsData.length}</p>
-        </div>
-        <div className={utilStyles.statCard}>
-          <p className={utilStyles.statLabel}>Available tags</p>
-          <p className={utilStyles.statValue}>{tags.length}</p>
-        </div>
-        <div className={utilStyles.statCard}>
-          <p className={utilStyles.statLabel}>Quick links</p>
-          <p className={utilStyles.statValue}>{site.external?.length || 0}</p>
-        </div>
       </section>
 
       <section className={utilStyles.section}>
         <div className={utilStyles.sectionHeader}>
           <div>
             <h2 className={utilStyles.headingXl}>Latest posts</h2>
-            <p className={utilStyles.sectionDescription}>
-              最近发布的文章，支持标签浏览与 Markdown 写作流程。
-            </p>
           </div>
           <Link href="/tags" className={utilStyles.sectionLink}>
             View all tags
@@ -87,27 +51,6 @@ export default function Home({ allPostsData, tags }) {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className={utilStyles.section}>
-        <div className={utilStyles.sectionHeader}>
-          <div>
-            <h2 className={utilStyles.headingXl}>Popular tags</h2>
-            <p className={utilStyles.sectionDescription}>
-              用标签快速归档主题，保持博客内容清晰可检索。
-            </p>
-          </div>
-        </div>
-
-        <ul className={utilStyles.tagList}>
-          {tags.map((tag) => (
-            <li key={tag.slug}>
-              <Link href={`/tags/${tag.slug}`} className={utilStyles.tag}>
-                #{tag.name} <span className={utilStyles.tagCount}>{tag.count}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </section>
     </Layout>
   );
